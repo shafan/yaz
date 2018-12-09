@@ -17,7 +17,7 @@
   ],
   "require": {
     "php": ">=5.6",
-    "scriptotek/marc": "dev-master",
+    "scriptotek/marc": "dev-master"
 
   },
   "require-dev": {
