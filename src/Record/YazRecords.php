@@ -2,7 +2,7 @@
 
 namespace Medlib\Yaz\Record;
 
-use Medlib\MarcXML\Parser\Parser;
+use Scriptotek\Marc\Collection;
 use Medlib\Yaz\Exception\QueryException;
 use Medlib\Yaz\Exception\QueryNotAllowException;
 use Danmichaelo\QuiteSimpleXMLElement\QuiteSimpleXMLElement;
@@ -118,7 +118,7 @@ class YazRecords
     {
         $parserResult = new QuiteSimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?>'. $result);
         $parserResult->registerXPathNamespaces([ 'marc' => 'http://www.loc.gov/MARC21/slim' ]);
-        $parsed = (new Parser())->parse($parserResult);
+        $parsed = Collection::fromString($parserResult);
         return $parsed;
     }
 
